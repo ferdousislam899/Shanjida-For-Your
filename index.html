@@ -1,0 +1,3972 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Sanjida ❤️ — A Little Surprise</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Hind Siliguri','Poppins',sans-serif;
+    background:#050309;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body.locked{
+    overflow:hidden;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,45,125,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(130,60,255,.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255,80,170,.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020204,
+            #0d0611,
+            #050309
+        );
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.6;
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+        opacity:.15;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.7);
+    }
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+#hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:20;
+}
+
+.heart{
+    position:absolute;
+    bottom:-40px;
+
+    color:#ff70a8;
+    font-size:20px;
+
+    animation:
+        heartFloat linear forwards;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,70,140,.7));
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.6);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.4);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   PASSWORD SCREEN
+========================================================= */
+
+#lockScreen{
+    position:fixed;
+    inset:0;
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(130,20,80,.28),
+            transparent 45%
+        ),
+        #020204;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+}
+
+#lockScreen.hide{
+    opacity:0;
+    visibility:hidden;
+    transform:scale(1.08);
+}
+
+.lockBox{
+
+    width:min(430px,100%);
+
+    padding:42px 26px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.14);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7),
+        inset 0 1px 0 rgba(255,255,255,.1);
+
+    animation:
+        boxAppear 1s ease;
+}
+
+@keyframes boxAppear{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(30px)
+            scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.lockIcon{
+
+    width:105px;
+    height:105px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:48px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ff3d81,
+            #943dff
+        );
+
+    box-shadow:
+        0 0 35px rgba(255,50,130,.45),
+        0 0 100px rgba(150,50,255,.2);
+
+    animation:
+        lockFloat 3s ease-in-out infinite;
+}
+
+@keyframes lockFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.lockBox h1{
+
+    margin-top:25px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    font-weight:400;
+}
+
+.lockBox p{
+
+    margin:10px 0 25px;
+
+    color:#d2c7d5;
+
+    line-height:1.9;
+}
+
+.passwordInput{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:15px;
+
+    border:
+        1px solid rgba(255,255,255,.16);
+
+    outline:none;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:20px;
+
+    letter-spacing:8px;
+
+    transition:.3s;
+}
+
+.passwordInput:focus{
+
+    border-color:#ff69a4;
+
+    box-shadow:
+        0 0 20px rgba(255,80,150,.18);
+}
+
+.mainBtn{
+
+    margin-top:18px;
+
+    border:0;
+
+    padding:14px 26px;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3d81,
+            #a04dff
+        );
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    box-shadow:
+        0 10px 35px rgba(255,50,130,.25);
+
+    transition:.3s;
+}
+
+.mainBtn:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 45px rgba(255,50,130,.4);
+}
+
+#error{
+
+    height:24px;
+
+    margin-top:10px;
+
+    color:#ff82aa;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+#website{
+    display:none;
+}
+
+section{
+
+    min-height:100vh;
+
+    padding:
+        100px 20px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+.container{
+
+    width:min(1050px,100%);
+
+    margin:auto;
+}
+
+.center{
+    text-align:center;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.smallText{
+
+    color:#ff82ad;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+}
+
+.sectionTitle{
+
+    text-align:center;
+
+    margin-bottom:45px;
+}
+
+.sectionTitle span{
+
+    color:#ff82ad;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+.sectionTitle h2{
+
+    margin-top:10px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-weight:400;
+
+    font-size:
+        clamp(45px,7vw,75px);
+}
+
+.lead{
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    color:#c9bfcc;
+
+    line-height:2;
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass{
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    text-align:center;
+}
+
+.heroContent{
+
+    position:relative;
+
+    z-index:5;
+}
+
+.hero h1{
+
+    margin:
+        18px 0;
+
+    font-family:'Great Vibes',cursive;
+
+    font-weight:400;
+
+    font-size:
+        clamp(75px,14vw,145px);
+
+    line-height:.95;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff85b2,
+            #d59aff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 6s linear infinite;
+
+    text-shadow:
+        0 0 50px rgba(255,80,150,.2);
+}
+
+@keyframes gradientMove{
+
+    to{
+        background-position:300%;
+    }
+}
+
+.hero h2{
+
+    font-size:
+        clamp(23px,4vw,38px);
+
+    font-weight:400;
+}
+
+.hero p{
+
+    max-width:650px;
+
+    margin:22px auto;
+
+    color:#c4bac7;
+
+    line-height:2;
+}
+
+.heroPhoto{
+
+    width:220px;
+    height:220px;
+
+    margin:30px auto;
+
+    display:block;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:
+        5px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 0 45px rgba(255,60,140,.35),
+        0 0 110px rgba(140,60,255,.18);
+
+    animation:
+        photoFloat 4s ease-in-out infinite;
+}
+
+@keyframes photoFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+
+/* =========================================================
+   3D GIFT
+========================================================= */
+
+.giftArea{
+
+    text-align:center;
+}
+
+.gift3d{
+
+    width:190px;
+    height:165px;
+
+    margin:55px auto 25px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transform-style:preserve-3d;
+
+    animation:
+        giftFloat 3s ease-in-out infinite;
+
+    transition:.5s;
+}
+
+@keyframes giftFloat{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotateY(-8deg);
+    }
+
+    50%{
+        transform:
+            translateY(-15px)
+            rotateY(8deg);
+    }
+}
+
+.giftBody{
+
+    position:absolute;
+
+    left:15px;
+    right:15px;
+    bottom:0;
+
+    height:110px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2673,
+            #9d32ff
+        );
+
+    box-shadow:
+        0 25px 50px rgba(255,30,110,.35);
+}
+
+.giftBody::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:25px;
+    height:100%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffd65c,
+            #fff09a,
+            #ffd65c
+        );
+}
+
+.giftLid{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    top:27px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4c83,
+            #c33bff
+        );
+
+    z-index:4;
+
+    transition:
+        1s cubic-bezier(.2,.8,.2,1);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.2);
+}
+
+.giftBow{
+
+    position:absolute;
+
+    left:50%;
+    top:0;
+
+    width:40px;
+    height:40px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:7;
+}
+
+.giftBow::before,
+.giftBow::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:48px;
+    height:30px;
+
+    border:
+        8px solid #ffd85c;
+
+    border-radius:50%;
+}
+
+.giftBow::before{
+
+    left:-38px;
+
+    transform:
+        rotate(25deg);
+}
+
+.giftBow::after{
+
+    right:-38px;
+
+    transform:
+        rotate(-25deg);
+}
+
+.gift3d.open .giftLid{
+
+    transform:
+        translateY(-65px)
+        rotate(-18deg)
+        rotateY(-25deg);
+}
+
+.gift3d.open{
+
+    animation:none;
+
+    transform:
+        rotateY(0)
+        scale(1.03);
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:40px;
+
+    line-height:2.2;
+
+    color:#ddd3df;
+
+    font-size:17px;
+}
+
+.letter strong{
+
+    color:#ff8db4;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+}
+
+.specialCard{
+
+    padding:30px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    transition:.4s;
+}
+
+.specialCard:hover{
+
+    transform:
+        translateY(-10px)
+        rotateX(2deg);
+
+    background:
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 25px 60px rgba(255,50,130,.12);
+}
+
+.specialCard .icon{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.specialCard h3{
+
+    margin-bottom:10px;
+
+    font-size:20px;
+}
+
+.specialCard p{
+
+    color:#bdb3c1;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   QUALITIES
+========================================================= */
+
+.qualities{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+}
+
+.quality{
+
+    padding:25px;
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+    transition:.4s;
+}
+
+.quality:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(255,100,160,.3);
+}
+
+.quality .icon{
+
+    font-size:35px;
+}
+
+.quality small{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#c3b8c5;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+}
+
+.galleryItem{
+
+    position:relative;
+
+    overflow:hidden;
+
+    height:550px;
+
+    border-radius:28px;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    background:#100b12;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+.galleryItem img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+        transform .8s ease;
+}
+
+.galleryItem:hover img{
+
+    transform:scale(1.07);
+}
+
+.caption{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:
+        70px 25px 25px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.9)
+        );
+
+    font-size:17px;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.twoColumn{
+
+    display:grid;
+
+    grid-template-columns:
+        350px 1fr;
+
+    gap:45px;
+
+    align-items:center;
+}
+
+.profilePhoto{
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45);
+}
+
+.sideText{
+
+    padding:35px;
+
+    color:#d0c6d2;
+
+    line-height:2.1;
+
+    font-size:17px;
+}
+
+.sideText h3{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:52px;
+
+    color:#ff8cb2;
+
+    font-weight:400;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.timeline{
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+.timelineItem{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:22px;
+}
+
+.timelineIcon{
+
+    min-width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#190b20;
+
+    border:
+        1px solid rgba(255,100,160,.35);
+
+    box-shadow:
+        0 0 20px rgba(255,70,150,.1);
+}
+
+.timelineText{
+
+    flex:1;
+
+    padding:22px;
+}
+
+.timelineText h3{
+
+    margin-bottom:6px;
+
+    font-size:20px;
+}
+
+.timelineText p{
+
+    color:#c6bbc8;
+
+    line-height:1.9;
+}
+
+
+/* =========================================================
+   SECRET
+========================================================= */
+
+.secretBox{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.secretLock{
+
+    font-size:60px;
+
+    animation:
+        lockFloat 3s ease-in-out infinite;
+}
+
+.secretContent{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    line-height:2;
+
+    color:#ddd3df;
+
+    background:
+        rgba(255,70,140,.07);
+
+    border:
+        1px solid rgba(255,100,160,.18);
+
+    animation:
+        reveal .8s ease;
+}
+
+.secretContent.show{
+
+    display:block;
+}
+
+@keyframes reveal{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quoteSection{
+
+    min-height:75vh;
+}
+
+.quote{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.quoteMark{
+
+    font-size:70px;
+
+    color:#ff679b;
+}
+
+.quote p{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(40px,7vw,70px);
+
+    line-height:1.35;
+
+    color:#ffe9f2;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelopeArea{
+
+    text-align:center;
+}
+
+.envelope{
+
+    width:190px;
+    height:135px;
+
+    margin:50px auto 25px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    perspective:700px;
+}
+
+.envBody{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5ba8,
+            #895eff
+        );
+
+    box-shadow:
+        0 20px 50px rgba(255,60,150,.25);
+}
+
+.envFlap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:75px;
+
+    background:#ffafd3;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:top;
+
+    transition:.8s;
+
+    z-index:3;
+}
+
+.envelope.open .envFlap{
+
+    transform:
+        rotateX(180deg);
+}
+
+.missMessage{
+
+    display:none;
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:30px;
+
+    line-height:2;
+
+    color:#ddd3df;
+}
+
+.missMessage.show{
+
+    display:block;
+
+    animation:
+        reveal .8s ease;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti{
+
+    position:fixed;
+
+    top:-30px;
+
+    width:8px;
+    height:14px;
+
+    z-index:10000;
+
+    pointer-events:none;
+
+    animation:
+        confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   FINAL SURPRISE
+========================================================= */
+.finalSection{
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    position:relative;
+}
+
+.finalIntro{
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.finalIntro.hide{
+
+    opacity:0;
+
+    transform:
+        scale(.7);
+
+    pointer-events:none;
+}
+
+.finalButton{
+
+    margin-top:30px;
+}
+
+
+/* ROSE STAGE */
+
+.roseStage{
+
+    display:none;
+
+    position:absolute;
+
+    inset:0;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    z-index:10;
+}
+
+.roseStage.show{
+
+    display:flex;
+
+    animation:
+        stageAppear 1s ease;
+}
+
+@keyframes stageAppear{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.roseCircle{
+
+    width:250px;
+    height:250px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    animation:
+        roseRotate 15s linear infinite;
+}
+
+@keyframes roseRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.rose{
+
+    position:absolute;
+
+    font-size:38px;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(255,60,100,.8)
+        );
+
+    animation:
+        rosePulse 2s ease-in-out infinite;
+}
+
+@keyframes rosePulse{
+
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+.rose:nth-child(1){
+    transform:translateY(-110px);
+}
+
+.rose:nth-child(2){
+    transform:translate(78px,-78px);
+}
+
+.rose:nth-child(3){
+    transform:translateX(110px);
+}
+
+.rose:nth-child(4){
+    transform:translate(78px,78px);
+}
+
+.rose:nth-child(5){
+    transform:translateY(110px);
+}
+
+.rose:nth-child(6){
+    transform:translate(-78px,78px);
+}
+
+.rose:nth-child(7){
+    transform:translateX(-110px);
+}
+
+.rose:nth-child(8){
+    transform:translate(-78px,-78px);
+}
+
+.roseCenter{
+
+    font-size:80px;
+
+    animation:
+        centerHeart 1.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 25px rgba(255,50,120,.8)
+        );
+}
+
+@keyframes centerHeart{
+
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+.roseText{
+
+    margin-top:45px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#ffb0cc;
+
+    opacity:0;
+
+    animation:
+        textAppear 1s ease 1.5s forwards;
+}
+
+@keyframes textAppear{
+
+    to{
+        opacity:1;
+    }
+}
+
+
+/* BIG LOVE */
+
+.bigLove{
+
+    display:none;
+
+    position:absolute;
+
+    inset:0;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    z-index:30;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,30,100,.15),
+            transparent 55%
+        );
+}
+
+.bigLove.show{
+
+    display:flex;
+
+    animation:
+        loveStage 1s ease;
+}
+
+@keyframes loveStage{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.bigHeart{
+
+    font-size:
+        clamp(130px,25vw,280px);
+
+    line-height:1;
+
+    filter:
+        drop-shadow(
+            0 0 35px rgba(255,30,100,.8)
+        );
+
+    animation:
+        hugeHeart 2s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes hugeHeart{
+
+    0%{
+        transform:
+            scale(.1);
+        opacity:0;
+    }
+
+    60%{
+        transform:
+            scale(1.35);
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            scale(1);
+        opacity:1;
+    }
+}
+
+.loveText{
+
+    margin-top:15px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(60px,12vw,130px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff65a1,
+            #d37cff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+
+/* CAKE */
+
+.cakeStage{
+
+    display:none;
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:40;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+}
+
+.cakeStage.show{
+
+    display:flex;
+
+    animation:
+        cakeAppear 1s ease;
+}
+
+@keyframes cakeAppear{
+
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.cake{
+
+    position:relative;
+
+    width:300px;
+    height:220px;
+
+    margin-bottom:30px;
+}
+
+.cakePlate{
+
+    position:absolute;
+
+    bottom:0;
+    left:50%;
+
+    width:300px;
+    height:25px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            #fff,
+            #d8d8ff
+        );
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.5);
+}
+
+.cakeBottom{
+
+    position:absolute;
+
+    bottom:22px;
+    left:50%;
+
+    width:250px;
+    height:85px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        15px 15px 25px 25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff75ae,
+            #c33d91
+        );
+
+    box-shadow:
+        inset 0 -12px 0 rgba(100,20,80,.18);
+}
+
+.cakeTop{
+
+    position:absolute;
+
+    left:50%;
+    bottom:95px;
+
+    width:270px;
+    height:70px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffb7d2,
+            #ff74ae
+        );
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.2);
+}
+
+.cream{
+
+    position:absolute;
+
+    left:50%;
+    bottom:85px;
+
+    width:255px;
+    height:30px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:#fff1f7;
+
+    z-index:3;
+}
+
+.candle{
+
+    position:absolute;
+
+    bottom:145px;
+    left:50%;
+
+    width:16px;
+    height:55px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:5px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #fff,
+            #fff 7px,
+            #ff68a5 7px,
+            #ff68a5 14px
+        );
+
+    z-index:5;
+}
+
+.flame{
+
+    position:absolute;
+
+    left:50%;
+    bottom:198px;
+
+    width:25px;
+    height:38px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            #fff,
+            #ffd34e 35%,
+            #ff7b32 65%,
+            transparent 70%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 15px #ffae35
+        );
+
+    animation:
+        flame 1s ease-in-out infinite;
+}
+
+@keyframes flame{
+
+    50%{
+        transform:
+            translateX(-50%)
+            scale(1.15)
+            rotate(3deg);
+    }
+}
+
+.cakeText{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(45px,9vw,90px);
+
+    color:#ffdce9;
+
+    text-shadow:
+        0 0 25px rgba(255,70,140,.5);
+}
+
+.cakeSub{
+
+    margin-top:5px;
+
+    color:#d5cad6;
+
+    font-size:18px;
+}
+
+
+/* FINAL LOVE MESSAGE */
+
+.finalLove{
+
+    display:none;
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:50;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    padding:20px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,50,120,.14),
+            transparent 60%
+        );
+}
+
+.finalLove.show{
+
+    display:flex;
+
+    animation:
+        finalReveal 1.5s ease;
+}
+
+@keyframes finalReveal{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.finalLove h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(65px,13vw,140px);
+
+    font-weight:400;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff72a7,
+            #d276ff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+    animation:
+        gradientMove 5s linear infinite;
+}
+
+.finalLove p{
+
+    max-width:700px;
+
+    color:#d5cad7;
+
+    line-height:2;
+
+    font-size:18px;
+
+    margin-top:15px;
+}
+
+.finalSignature{
+
+    margin-top:25px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#ff91b8;
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.musicButton{
+
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:52px;
+    height:52px;
+
+    z-index:500;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background:
+        rgba(20,10,25,.8);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(12px);
+
+    font-size:20px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
+}
+
+
+/* =========================================================
+   TOP NAV
+========================================================= */
+
+.topNav{
+
+    position:fixed;
+
+    top:18px;
+    right:18px;
+
+    z-index:500;
+
+    display:none;
+
+    gap:8px;
+
+    padding:7px;
+
+    border-radius:50px;
+
+    background:
+        rgba(10,5,15,.7);
+
+    backdrop-filter:blur(15px);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+}
+
+.topNav button{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#fff;
+
+    cursor:pointer;
+}
+
+  /* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:750px){
+
+    section{
+        padding:80px 16px;
+    }
+
+    .grid,
+    .qualities,
+    .gallery,
+    .twoColumn{
+        grid-template-columns:1fr;
+    }
+
+    .heroPhoto{
+        width:190px;
+        height:190px;
+    }
+
+    .letter{
+        padding:25px 20px;
+        font-size:16px;
+    }
+
+    .galleryItem{
+        height:500px;
+    }
+
+    .profilePhoto{
+        height:500px;
+    }
+
+    .quality{
+        padding:22px;
+    }
+
+    .timelineItem{
+        gap:10px;
+    }
+
+    .timelineIcon{
+        min-width:42px;
+        height:42px;
+    }
+
+    .secretBox{
+        padding:28px 20px;
+    }
+
+    .cake{
+        transform:scale(.82);
+    }
+
+    .roseCircle{
+        transform:scale(.82);
+    }
+
+    .roseText{
+        font-size:40px;
+    }
+}
+
+@media(max-width:450px){
+
+    .lockBox{
+        padding:35px 20px;
+    }
+
+    .lockBox h1{
+        font-size:42px;
+    }
+
+    .hero h1{
+        font-size:72px;
+    }
+
+    .galleryItem{
+        height:460px;
+    }
+
+    .cake{
+        transform:scale(.68);
+    }
+
+    .finalSignature{
+        font-size:40px;
+    }
+}
+
+</style>
+</head>
+
+
+<body class="locked">
+  <!-- =========================================================
+     STARS
+========================================================= -->
+
+<div id="stars"></div>
+
+<!-- FLOATING HEARTS -->
+
+<div id="hearts"></div>
+
+
+<!-- =========================================================
+     PASSWORD SCREEN
+========================================================= -->
+
+<div id="lockScreen">
+
+    <div class="lockBox">
+
+        <div class="lockIcon">
+            🔐
+        </div>
+
+        <h1>
+            Hey Sanjida… ❤️
+        </h1>
+
+        <p>
+            Someone made a little surprise
+            especially for you. 🌸
+            <br><br>
+
+            But first…
+            <br>
+
+            <strong>
+                Enter the secret password.
+            </strong>
+        </p>
+
+        <input
+            id="password"
+            class="passwordInput"
+            type="password"
+            maxlength="5"
+            inputmode="numeric"
+            placeholder="•••••"
+            autocomplete="off"
+        >
+
+        <div id="error"></div>
+
+        <button
+            class="mainBtn"
+            onclick="unlock()">
+
+            🔓 Unlock My Surprise
+
+        </button>
+
+    </div>
+
+</div>
+<!-- =========================================================
+     WEBSITE
+========================================================= -->
+
+<div id="website">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="container heroContent">
+
+        <div class="smallText">
+            A Little Surprise Made With ❤️
+        </div>
+
+        <h1>
+            Sanjida
+        </h1>
+
+        <h2>
+            🎂 Happy Birthday
+        </h2>
+
+        <img
+            src="sanjida1.jpg"
+            class="heroPhoto"
+            alt="Sanjida"
+        >
+
+        <p>
+            Today isn't just another day…<br>
+
+            It's the day someone very special
+            came into this world. 🌸
+        </p>
+
+        <button
+            class="mainBtn"
+            onclick="startSurprise()">
+
+            ✨ Start The Surprise
+
+        </button>
+
+    </div>
+
+</section>
+
+ <!-- =========================================================
+     LETTER
+========================================================= -->
+
+<section id="letterSection">
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                FOR YOU 💌
+            </span>
+
+            <h2>
+                A Little Letter
+            </h2>
+
+        </div>
+
+
+        <div class="glass letter">
+
+            <p>
+                <strong>
+                    Dear Sanjida,
+                </strong>
+            </p>
+
+            <p>
+                হয়তো আমাদের এখনো সামনাসামনি দেখা হয়নি…
+                আমাদের গল্পটাও একটু অন্যরকম।
+                কথা হয়েছে, ভিডিও কলে একে অপরকে দেখেছি,
+                আর সেই কথার মাঝেই তৈরি হয়েছে
+                কিছু সুন্দর মুহূর্ত।
+            </p>
+
+            <p>
+                কিছু মানুষকে কাছে অনুভব করার জন্য
+                সবসময় পাশে থাকা লাগে না।
+                কখনো কখনো কিছু কথা,
+                কিছু হাসি আর কিছু ছোট ছোট মুহূর্তই
+                একজন মানুষকে বিশেষ করে তোলে। ❤️
+            </p>
+
+            <p>
+                আজ তোমার জন্মদিনে আমার একটাই চাওয়া—
+                তুমি সবসময় ভালো থেকো,
+                হাসিখুশি থেকো এবং তোমার
+                সব সুন্দর স্বপ্ন পূরণ হোক।
+            </p>
+
+            <p>
+                এই Website-টা হয়তো
+                খুব বড় কোনো gift নয়।
+                কিন্তু এর প্রতিটা অংশে একটা জিনিস আছে—
+                <strong>
+                    তোমার Birthday-টা
+                    একটু বেশি special করে দেওয়ার চেষ্টা।
+                </strong>
+                🌸
+            </p>
+
+            <p style="text-align:center;">
+                Happy Birthday, Sanjida. 🎂❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     WHY SPECIAL
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                JUST FOR YOU
+            </span>
+
+            <h2>
+                Why You Are Special ❤️
+            </h2>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="specialCard">
+
+                <div class="icon">
+                    🌸
+                </div>
+
+                <h3>
+                    Your Smile
+                </h3>
+
+                <p>
+                    তোমার হাসিটা হয়তো
+                    তোমার কাছে সাধারণ,
+                    কিন্তু কারও কারও কাছে
+                    সেটা পুরো একটা দিনের
+                    ভালো লাগা।
+                </p>
+
+            </div>
+
+
+            <div class="specialCard">
+
+                <div class="icon">
+                    🫶
+                </div>
+
+                <h3>
+                    Your Way of Talking
+                </h3>
+
+                <p>
+                    তোমার সাথে কথা বলার মধ্যে
+                    একটা আলাদা অনুভূতি আছে।
+                    কিছু কথা অজান্তেই
+                    মনে থেকে যায়।
+                </p>
+
+            </div>
+
+
+            <div class="specialCard">
+
+                <div class="icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Your Personality
+                </h3>
+
+                <p>
+                    তোমাকে সুন্দর করে তোলার জন্য
+                    আলাদা কোনো কারণের প্রয়োজন নেই।
+                    তুমি যেমন,
+                    ঠিক তেমনটাই সুন্দর।
+                </p>
+
+            </div>
+
+
+            <div class="specialCard">
+
+                <div class="icon">
+                    💖
+                </div>
+
+                <h3>
+                    Simply You
+                </h3>
+
+                <p>
+                    কিছু মানুষকে ব্যাখ্যা করা যায় না।
+                    শুধু অনুভব করা যায়।
+                    তুমি হয়তো তেমনই একজন।
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>  
+<!-- =========================================================
+     QUALITIES
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                BEAUTIFUL THINGS ABOUT YOU
+            </span>
+
+            <h2>
+                🌸 তোমার সুন্দর দিকগুলো
+            </h2>
+
+        </div>
+
+
+        <div class="qualities">
+
+
+            <div class="glass quality">
+
+                <div class="icon">
+                    🤍
+                </div>
+
+                <div>
+
+                    <b>
+                        Simple & Genuine
+                    </b>
+
+                    <small>
+                        নিজের মতো থাকাটাই
+                        তোমার একটা সুন্দর দিক।
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass quality">
+
+                <div class="icon">
+                    😊
+                </div>
+
+                <div>
+
+                    <b>
+                        A Beautiful Smile
+                    </b>
+
+                    <small>
+                        একটা হাসি কতটা সুন্দর হতে পারে—
+                        তার একটা উদাহরণ।
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass quality">
+
+                <div class="icon">
+                    🌙
+                </div>
+
+                <div>
+
+                    <b>
+                        Calm Vibes
+                    </b>
+
+                    <small>
+                        তোমার সাথে কথা বললে
+                        কথাগুলো একটু শান্ত লাগে।
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="glass quality">
+
+                <div class="icon">
+                    🫶
+                </div>
+
+                <div>
+
+                    <b>
+                        Someone Special
+                    </b>
+
+                    <small>
+                        সবশেষে—
+                        তুমি সত্যিই একজন
+                        special person।
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>  
+  <!-- =========================================================
+     PHOTO GALLERY
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                A FEW BEAUTIFUL MOMENTS
+            </span>
+
+            <h2>
+                📸 তোমার কিছু সুন্দর ছবি
+            </h2>
+
+            <p class="lead">
+                কিছু ছবি caption চায় না।
+                শুধু দেখলেই বোঝা যায়—
+                কেন এগুলো এখানে রাখা হয়েছে। ❤️
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+
+            <div class="galleryItem">
+
+                <img
+                    src="sanjida1.jpg"
+                    alt="Sanjida Photo 1"
+                >
+
+                <div class="caption">
+                    A beautiful memory deserves
+                    a beautiful place. 🌸
+                </div>
+
+            </div>
+
+
+            <div class="galleryItem">
+
+                <img
+                    src="sanjida2.jpg"
+                    alt="Sanjida Photo 2"
+                >
+
+                <div class="caption">
+                    Some pictures don't need
+                    a caption… ❤️
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     VIRTUAL MOMENTS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                OUR STORY IS DIFFERENT
+            </span>
+
+            <h2>
+                🥰 আমাদের কিছু সুন্দর মুহূর্ত
+            </h2>
+
+            <p class="lead">
+                সামনাসামনি দেখা হয়নি—
+                তাই এই অংশে আমাদের
+                Virtual Moments-এর গল্প।
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timelineItem">
+
+                <div class="timelineIcon">
+                    💬
+                </div>
+
+                <div class="glass timelineText">
+
+                    <h3>
+                        প্রথম কথাগুলো
+                    </h3>
+
+                    <p>
+                        কথা শুরু হয়েছিল সাধারণভাবেই।
+                        কিন্তু কিছু সাধারণ কথা কখন যে
+                        মনে জায়গা করে নেয়,
+                        সেটা বোঝা যায় পরে।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timelineItem">
+
+                <div class="timelineIcon">
+                    📱
+                </div>
+
+                <div class="glass timelineText">
+
+                    <h3>
+                        ভিডিও কল
+                    </h3>
+
+                    <p>
+                        একই জায়গায় না থেকেও
+                        স্ক্রিনের ওপাশ থেকে
+                        একে অপরকে দেখা—
+                        আমাদের গল্পের সুন্দর
+                        দিকগুলোর একটা।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timelineItem">
+
+                <div class="timelineIcon">
+                    😊
+                </div>
+
+                <div class="glass timelineText">
+
+                    <h3>
+                        ছোট ছোট হাসি
+                    </h3>
+
+                    <p>
+                        কিছু মুহূর্ত খুব বড় নয়,
+                        কিন্তু সেগুলো
+                        মনে থেকে যায়।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timelineItem">
+
+                <div class="timelineIcon">
+                    ❤️
+                </div>
+
+                <div class="glass timelineText">
+
+                    <h3>
+                        আজকের Surprise
+                    </h3>
+
+                    <p>
+                        আজ তোমার Birthday-তে
+                        সেই ছোট ছোট ভালো লাগাগুলোকে
+                        একটা Website-এর মধ্যে
+                        রেখে দিলাম।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     FROM FERDOUS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                FROM MY SIDE
+            </span>
+
+            <h2>
+                💭 তোমাকে নিয়ে আমার কিছু কথা
+            </h2>
+
+        </div>
+
+
+        <div class="twoColumn">
+
+
+            <img
+                src="ferdous.jpg"
+                class="profilePhoto"
+                alt="Ferdous"
+            >
+
+
+            <div class="glass sideText">
+
+                <h3>
+                    From Ferdous ❤️
+                </h3>
+
+                <p>
+                    তোমাকে নিয়ে অনেক বড় বড়
+                    কথা বলার দরকার নেই।
+                    শুধু এটুকু বলতে চাই—
+                    তোমার সাথে কথা বললে
+                    সময়টা একটু অন্যরকম লাগে।
+                </p>
+
+                <p>
+                    আমাদের এখনো সামনাসামনি
+                    দেখা হয়নি।
+                    হয়তো সামনে অনেক কিছুই বদলাবে,
+                    অনেক নতুন গল্পও তৈরি হবে।
+                </p>
+
+                <p>
+                    কিন্তু এখন পর্যন্ত
+                    যেসব কথা আর মুহূর্ত পেয়েছি,
+                    সেগুলো আমার কাছে সুন্দর।
+                </p>
+
+                <p>
+                    এই ছোট্ট Website-এর
+                    প্রতিটা animation,
+                    প্রতিটা লেখা আর প্রতিটা ছবি
+                    শুধু একটা কথাই বলতে চায়—
+                </p>
+
+                <p>
+                    <strong>
+                        তোমার Birthday আমার কাছে
+                        মনে রাখার মতো একটা দিন। ❤️
+                    </strong>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GIFT BOX
+========================================================= -->
+
+<section>
+
+    <div class="container giftArea">
+
+        <div class="sectionTitle">
+
+            <span>
+                THERE IS ONE MORE THING
+            </span>
+
+            <h2>
+                🎁 তোমার জন্য একটা Gift
+            </h2>
+
+            <p class="lead">
+                Gift Box-এ click করো…
+                ভেতরে কী আছে দেখা যাক। 👀
+            </p>
+
+        </div>
+
+
+        <div
+            class="gift3d"
+            id="mainGift"
+            onclick="openGift()"
+        >
+
+            <div class="giftBow"></div>
+
+            <div class="giftLid"></div>
+
+            <div class="giftBody"></div>
+
+        </div>
+
+
+        <button
+            class="mainBtn"
+            onclick="openGift()">
+
+            🎁 Tap To Open
+
+        </button>
+
+
+        <div
+            id="giftMessage"
+            class="glass letter"
+            style="display:none;margin-top:30px;">
+
+            <h3 style="text-align:center;">
+                Your Real Gift… ❤️
+            </h3>
+
+            <br>
+
+            <p style="text-align:center;">
+
+                এই Box-এর ভেতরে কোনো দামি জিনিস নেই।
+
+                <br>
+
+                আছে একটা ছোট্ট চেষ্টা—
+                তোমার Birthday-টাকে
+                একটু বেশি সুন্দর করে দেওয়ার।
+
+                <br><br>
+
+                ✨❤️
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     SECRET MESSAGE
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="sectionTitle">
+
+            <span>
+                A SECRET MESSAGE
+            </span>
+
+            <h2>
+                💖 শুধু তোমার জন্য একটা Secret
+            </h2>
+
+        </div>
+
+
+        <div class="glass secretBox">
+
+            <div class="secretLock">
+                🔒
+            </div>
+
+            <p style="color:#d4c8d6;margin:15px;">
+                এটা শুধু Sanjida-এর জন্য।
+                Ready?
+            </p>
+
+
+            <button
+                class="mainBtn"
+                onclick="openSecret()">
+
+                💌 Open My Secret
+
+            </button>
+
+
+            <div
+                id="secretContent"
+                class="secretContent">
+
+                <b>
+                    একটা কথা বলি? 🤫
+                </b>
+
+                <br><br>
+
+                এই পুরো Website-টা বানানোর
+                আসল কারণ হলো—
+                তোমার Birthday-টা যেন
+                অন্যরকম হয়।
+
+                <br><br>
+
+                হয়তো এটা একটা ছোট্ট
+                digital gift,
+                কিন্তু এর পেছনে যে সময়
+                আর যত্ন আছে,
+                সেটা একদম সত্যি। ❤️
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUOTE
+========================================================= -->
+
+<section class="quoteSection">
+
+    <div class="container center">
+
+        <div class="sectionTitle">
+
+            <span>
+                BEAUTIFUL WORDS
+            </span>
+
+            <h2>
+                ✨ কিছু কথা
+            </h2>
+
+        </div>
+
+
+        <div class="quote">
+
+            <div class="quoteMark">
+                “
+            </div>
+
+            <p>
+                Some people become special
+                without even trying. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ENVELOPE
+========================================================= -->
+
+<section>
+
+    <div class="container envelopeArea">
+
+        <div class="sectionTitle">
+
+            <span>
+                ONE LAST MESSAGE
+            </span>
+
+            <h2>
+                💌 একটা চিঠি
+            </h2>
+
+        </div>
+
+
+        <p class="lead">
+            Envelope-এ click করো…
+        </p>
+
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()">
+
+            <div class="envBody"></div>
+
+            <div class="envFlap"></div>
+
+        </div>
+
+
+        <div
+            id="missMessage"
+            class="glass missMessage">
+
+            <p>
+                যদি কখনো এই Website-টার কথা মনে পড়ে,
+                তাহলে শুধু এটুকু মনে রেখো—
+                কারও একজনের কাছে
+                তোমার Birthday-টা
+                সত্যিই special ছিল। ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     FINAL SURPRISE
+========================================================= -->
+
+<section class="finalSection" id="finalSection">
+
+    <!-- INTRO -->
+
+    <div
+        id="finalIntro"
+        class="finalIntro">
+
+        <div class="smallText">
+            THE FINAL SURPRISE
+        </div>
+
+        <h2
+            style="
+            font-family:'Great Vibes',cursive;
+            font-size:clamp(55px,10vw,110px);
+            font-weight:400;
+            margin:20px 0;
+            ">
+
+            Ready for the last one? ❤️
+
+        </h2>
+
+        <p class="lead">
+
+            এবার সত্যিই শেষ Surprise…
+
+            <br>
+
+            তবে এটা একটু special। 🌹
+
+        </p>
+
+
+        <button
+            class="mainBtn finalButton"
+            onclick="startFinalSurprise()">
+
+            🌹 Open The Final Surprise
+
+        </button>
+
+    </div>
+
+
+    <!-- ROSE STAGE -->
+
+    <div
+        id="roseStage"
+        class="roseStage">
+
+        <div class="roseCircle">
+
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+            <div class="rose">🌹</div>
+
+            <div class="roseCenter">
+                ❤️
+            </div>
+
+        </div>
+
+        <div class="roseText">
+            For You, Sanjida 🌹
+        </div>
+
+    </div>
+
+
+    <!-- BIG LOVE -->
+
+    <div
+        id="bigLove"
+        class="bigLove">
+
+        <div class="bigHeart">
+            ❤️
+        </div>
+
+        <div class="loveText">
+            LOVE
+        </div>
+
+    </div>
+
+
+    <!-- CAKE -->
+
+    <div
+        id="cakeStage"
+        class="cakeStage">
+
+        <div class="cake">
+
+            <div class="cakePlate"></div>
+
+            <div class="cakeBottom"></div>
+
+            <div class="cakeTop"></div>
+
+            <div class="cream"></div>
+
+            <div class="candle"></div>
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <div class="cakeText">
+            Happy Birthday
+        </div>
+
+        <div class="cakeSub">
+            to Sanjida 🎂❤️
+        </div>
+
+    </div>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <div
+        id="finalLove"
+        class="finalLove">
+
+        <div style="font-size:70px;">
+            💖
+        </div>
+
+        <h1>
+            Sanjida,
+            <br>
+            I Love You
+        </h1>
+
+        <p>
+            তোমার জীবনের প্রতিটা দিন
+            আজকের মতো সুন্দর হোক।
+            <br>
+            হাসি, শান্তি আর ভালোবাসায়
+            তোমার জীবন ভরে উঠুক। 🌸
+        </p>
+
+        <div class="finalSignature">
+            — Ferdous ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<!-- =========================================================
+     MUSIC BUTTON
+========================================================= -->
+
+<button
+    class="musicButton"
+    id="musicButton"
+    onclick="toggleMusic()"
+    title="Music">
+
+    🎵
+
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+const correctPassword = "27926";
+
+const passwordInput =
+    document.getElementById("password");
+
+const error =
+    document.getElementById("error");
+
+const lockScreen =
+    document.getElementById("lockScreen");
+
+const website =
+    document.getElementById("website");
+
+
+function unlock(){
+
+    const value =
+        passwordInput.value.trim();
+
+    if(value === correctPassword){
+
+        error.textContent =
+            "Unlocked ❤️";
+
+        lockScreen.classList.add("hide");
+
+        document.body.classList.remove("locked");
+
+        website.style.display = "block";
+
+        createStars();
+
+        startHearts();
+
+        setTimeout(() => {
+
+            lockScreen.style.display = "none";
+
+        },1000);
+
+    }
+
+    else{
+
+        error.textContent =
+            "Wrong password… Try again ❤️";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+        passwordInput.animate(
+            [
+                {transform:"translateX(0)"},
+                {transform:"translateX(-8px)"},
+                {transform:"translateX(8px)"},
+                {transform:"translateX(0)"}
+            ],
+            {
+                duration:350
+            }
+        );
+    }
+}
+
+
+/* ENTER KEY */
+
+passwordInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            unlock();
+
+        }
+
+    }
+);
+  /* =========================================================
+   STARS
+========================================================= */
+
+function createStars(){
+
+    const stars =
+        document.getElementById("stars");
+
+    stars.innerHTML = "";
+
+    for(let i = 0; i < 100; i++){
+
+        const star =
+            document.createElement("div");
+
+        star.className = "star";
+
+        star.style.left =
+            Math.random() * 100 + "%";
+
+        star.style.top =
+            Math.random() * 100 + "%";
+
+        star.style.animationDelay =
+            Math.random() * 4 + "s";
+
+        star.style.opacity =
+            Math.random();
+
+        stars.appendChild(star);
+    }
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+let heartTimer = null;
+
+function startHearts(){
+
+    if(heartTimer) return;
+
+    heartTimer =
+        setInterval(createHeart,900);
+}
+
+
+function createHeart(){
+
+    const container =
+        document.getElementById("hearts");
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const symbols = [
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💓",
+        "🌸"
+    ];
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    heart.style.fontSize =
+        (14 + Math.random() * 22) + "px";
+
+    const duration =
+        5 + Math.random() * 5;
+
+    heart.style.animationDuration =
+        duration + "s";
+
+    container.appendChild(heart);
+
+    setTimeout(
+        () => heart.remove(),
+        duration * 1000
+    );
+}
+
+
+/* =========================================================
+   START SURPRISE
+========================================================= */
+
+function startSurprise(){
+
+    document
+        .getElementById("letterSection")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+  }
+  /* =========================================================
+   GIFT
+========================================================= */
+
+let giftOpened = false;
+
+function openGift(){
+
+    const gift =
+        document.getElementById("mainGift");
+
+    const message =
+        document.getElementById("giftMessage");
+
+    if(giftOpened) return;
+
+    giftOpened = true;
+
+    gift.classList.add("open");
+
+    setTimeout(() => {
+
+        message.style.display =
+            "block";
+
+        message.animate(
+            [
+                {
+                    opacity:0,
+                    transform:"translateY(25px)"
+                },
+                {
+                    opacity:1,
+                    transform:"translateY(0)"
+                }
+            ],
+            {
+                duration:700,
+                fill:"forwards"
+            }
+        );
+
+        createConfetti(70);
+
+    },800);
+}
+
+
+/* =========================================================
+   SECRET
+========================================================= */
+
+function openSecret(){
+
+    const content =
+        document.getElementById(
+            "secretContent"
+        );
+
+    content.classList.toggle("show");
+
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+function openEnvelope(){
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+    const message =
+        document.getElementById(
+            "missMessage"
+        );
+
+    envelope.classList.add("open");
+
+    setTimeout(() => {
+
+        message.classList.add("show");
+
+        createConfetti(40);
+
+    },500);
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createConfetti(amount = 50){
+
+    const pieces = [
+        "🎉",
+        "✨",
+        "💖",
+        "🌸",
+        "💕",
+        "⭐"
+    ];
+
+    for(let i = 0; i < amount; i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className =
+            "confetti";
+
+        piece.textContent =
+            pieces[
+                Math.floor(
+                    Math.random() *
+                    pieces.length
+                )
+            ];
+
+        piece.style.left =
+            Math.random() * 100 + "%";
+
+        piece.style.fontSize =
+            (12 + Math.random() * 15) + "px";
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(
+            () => piece.remove(),
+            6000
+        );
+    }
+}
+
+
+/* =========================================================
+   FINAL SURPRISE
+========================================================= */
+
+function startFinalSurprise(){
+
+    const intro =
+        document.getElementById(
+            "finalIntro"
+        );
+
+    const roses =
+        document.getElementById(
+            "roseStage"
+        );
+
+    const love =
+        document.getElementById(
+            "bigLove"
+        );
+
+    const cake =
+        document.getElementById(
+            "cakeStage"
+        );
+
+    const final =
+        document.getElementById(
+            "finalLove"
+        );
+
+
+    intro.classList.add("hide");
+
+    setTimeout(() => {
+
+        roses.classList.add("show");
+
+        createConfetti(35);
+
+    },700);
+
+
+    /* Roses → Love */
+
+    setTimeout(() => {
+
+        roses.classList.remove("show");
+
+        love.classList.add("show");
+
+        createHeartBurst();
+
+    },4500);
+
+
+    /* Love → Cake */
+
+    setTimeout(() => {
+
+        love.classList.remove("show");
+
+        cake.classList.add("show");
+
+        createConfetti(100);
+
+    },7500);
+
+
+    /* Cake → Final */
+
+    setTimeout(() => {
+
+        cake.classList.remove("show");
+
+        final.classList.add("show");
+
+        createConfetti(150);
+
+        createHeartBurst();
+
+    },11000);
+
+  }
+  /* =========================================================
+   HEART BURST
+========================================================= */
+
+function createHeartBurst(){
+
+    for(let i = 0; i < 40; i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.textContent = "❤️";
+
+        heart.style.position =
+            "fixed";
+
+        heart.style.left =
+            "50%";
+
+        heart.style.top =
+            "50%";
+
+        heart.style.zIndex =
+            "10001";
+
+        heart.style.pointerEvents =
+            "none";
+
+        heart.style.fontSize =
+            (14 + Math.random() * 24) + "px";
+
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        const distance =
+            120 + Math.random() * 350;
+
+        const x =
+            Math.cos(angle) * distance;
+
+        const y =
+            Math.sin(angle) * distance;
+
+        heart.animate(
+            [
+                {
+                    transform:
+                        "translate(-50%,-50%) scale(.2)",
+                    opacity:0
+                },
+                {
+                    transform:
+                        "translate(-50%,-50%) scale(1)",
+                    opacity:1,
+                    offset:.2
+                },
+                {
+                    transform:
+                        `translate(
+                            calc(-50% + ${x}px),
+                            calc(-50% + ${y}px)
+                        ) scale(.7)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:
+                    1200 + Math.random() * 1000,
+                easing:
+                    "cubic-bezier(.2,.8,.2,1)"
+            }
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(
+            () => heart.remove(),
+            2500
+        );
+    }
+}
+
+
+/* =========================================================
+   SIMPLE MUSIC / AMBIENT SOUND
+========================================================= */
+
+let audioContext = null;
+let musicPlaying = false;
+let musicTimer = null;
+
+
+function toggleMusic(){
+
+    const button =
+        document.getElementById(
+            "musicButton"
+        );
+
+    if(!audioContext){
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+    }
+
+    if(!musicPlaying){
+
+        musicPlaying = true;
+
+        button.textContent = "🔊";
+
+        playSoftTone();
+
+        musicTimer =
+            setInterval(
+                playSoftTone,
+                3500
+            );
+
+    }
+
+    else{
+
+        musicPlaying = false;
+
+        button.textContent = "🎵";
+
+        clearInterval(musicTimer);
+
+    }
+}
+
+
+function playSoftTone(){
+
+    if(!audioContext ||
+       !musicPlaying) return;
+
+    const oscillator =
+        audioContext.createOscillator();
+
+    const gain =
+        audioContext.createGain();
+
+    oscillator.type = "sine";
+
+    oscillator.frequency.value =
+        220 + Math.random() * 100;
+
+    gain.gain.setValueAtTime(
+        0,
+        audioContext.currentTime
+    );
+
+    gain.gain.linearRampToValueAtTime(
+        .025,
+        audioContext.currentTime + .4
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        audioContext.currentTime + 2.5
+    );
+
+    oscillator.connect(gain);
+
+    gain.connect(
+        audioContext.destination
+    );
+
+    oscillator.start();
+
+    oscillator.stop(
+        audioContext.currentTime + 2.5
+    );
+}
+
+
+/* =========================================================
+   INITIAL
+========================================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        passwordInput.focus();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
