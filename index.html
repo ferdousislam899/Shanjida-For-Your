@@ -3967,6 +3967,267 @@ window.addEventListener(
 );
 
 </script>
+<!-- ============================= -->
+<!-- FINAL GOODBYE MESSAGE -->
+<!-- ============================= -->
 
+<section class="goodbyeSection">
+  <div class="container">
+    <div class="goodbyeCard">
+
+      <div class="goodbyeIcon">💔</div>
+
+      <div class="goodbyeLabel">ONE LAST THING</div>
+
+      <h2>একটা কথা কি জানো?</h2>
+
+      <div class="goodbyeText">
+
+        <p>
+          জীবনে যেসব সন্দেহ করেছি, শেষ পর্যন্ত সবকিছুই ঠিক সেভাবেই মিলে গেল।
+          একেবারে পারফেক্টলি।
+        </p>
+
+        <p>
+          তুমি চাইলে অনেক আগেই বলতে পারতে যে তোমার বিয়ে ঠিক হয়ে গেছে।
+          তাহলে হয়তো এতদিন তোমাকে নিয়ে এত কিছু ভাবতাম না,
+          এতটা জড়িয়ে পড়তাম না।
+        </p>
+
+        <p>
+          তুমি হয়তো ভাবছো, আমি এসব বুঝি না, কিছু পারি না,
+          কিংবা এমনি এমনি এসব করছি।
+          কিন্তু সত্যিটা হলো—আমি তোমাকে সত্যিই ভালোবেসেছিলাম।
+          কোনো অভিনয় ছিল না, কোনো মিথ্যাও ছিল না।
+        </p>
+
+        <p>
+          তোমার প্রতি আমার ভালোবাসা যেমন সত্যি ছিল,
+          তেমনি আমার ইমোশন, আমার অভিমান, আমার কষ্ট—
+          সবকিছুই সত্যি ছিল।
+          শুধু আফসোস, তুমি কোনোদিন সেগুলো বুঝতে চাওনি।
+        </p>
+
+        <p>
+          এতদিন আমাকে ঘুরিয়ে-ফিরিয়ে শেষে হঠাৎ যখন বললে
+          তোমার বিয়ে ঠিক হয়ে গেছে, তখন অনেক কিছুই বুঝে গেলাম।
+          হয়তো আমার বোঝারই ভুল ছিল।
+        </p>
+
+        <p>
+          যাই হোক, আর কোনো অভিযোগ নেই।
+          তুমি তোমার জীবন নিয়ে ভালো থেকো।
+          সুখী হও। সত্যিই চাই, তোমার জীবনটা সুন্দর হোক।
+        </p>
+
+        <p>
+          শুধু একটা কথা মনে রেখো—
+          কাউকে ভালোবাসার আগে তার অনুভূতিগুলোর মূল্য দিতে হয়।
+          কারণ কাউকে আশা দেখিয়ে, কাছে এনে,
+          আবার হঠাৎ দূরে সরিয়ে দেওয়া খুব সহজ…
+          কিন্তু সেই মানুষটার ভেতরটা ভেঙে যায়।
+        </p>
+
+        <p>
+          অনেক কষ্ট দিয়েছো।
+          তবুও তোমার জন্য খারাপ কিছু চাইব না।
+        </p>
+
+        <p>
+          ভালো থেকো।
+          আর হ্যাঁ… জীবনে সুখী হও।
+        </p>
+
+        <div class="goodbyeDivider">✦ ✦ ✦</div>
+
+        <div class="finalWords">
+          আমার গল্পটা এখানেই শেষ। 💔
+        </div>
+
+      </div>
+
+      <div class="goodbyeSignature">
+        — Ferdous
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* ============================= */
+/* FINAL GOODBYE STYLE */
+/* ============================= */
+
+.goodbyeSection {
+  padding: 80px 20px 100px;
+  position: relative;
+}
+
+.goodbyeCard {
+  max-width: 850px;
+  margin: auto;
+  padding: 55px 45px;
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 30px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  transform: perspective(1000px) rotateX(0deg);
+  transition: 0.5s ease;
+}
+
+.goodbyeCard:hover {
+  transform: perspective(1000px) rotateX(1deg) translateY(-5px);
+}
+
+.goodbyeCard::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -50%;
+  width: 50%;
+  height: 300%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  animation: goodbyeShine 6s infinite;
+}
+
+@keyframes goodbyeShine {
+  0% {
+    left: -80%;
+  }
+
+  50% {
+    left: 150%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+.goodbyeIcon {
+  text-align: center;
+  font-size: 55px;
+  margin-bottom: 15px;
+
+  animation: heartBeat 2s infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+.goodbyeLabel {
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 12px;
+  opacity: 0.65;
+  margin-bottom: 12px;
+}
+
+.goodbyeCard h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 35px;
+}
+
+.goodbyeText {
+  position: relative;
+  z-index: 2;
+}
+
+.goodbyeText p {
+  font-size: 17px;
+  line-height: 2;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.goodbyeDivider {
+  text-align: center;
+  margin: 35px 0;
+  letter-spacing: 10px;
+  opacity: 0.5;
+}
+
+.finalWords {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.goodbyeSignature {
+  text-align: right;
+  margin-top: 35px;
+  font-size: 18px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .goodbyeSection {
+    padding: 50px 15px 70px;
+  }
+
+  .goodbyeCard {
+    padding: 40px 22px;
+    border-radius: 24px;
+  }
+
+  .goodbyeIcon {
+    font-size: 45px;
+  }
+
+  .goodbyeCard h2 {
+    font-size: 27px;
+  }
+
+  .goodbyeText p {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .finalWords {
+    font-size: 21px;
+  }
+
+  .goodbyeSignature {
+    font-size: 16px;
+  }
+}
+   </style>
+   
 </body>
 </html>
